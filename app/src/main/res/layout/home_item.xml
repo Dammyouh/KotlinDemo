@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/base_toolbar"/>
+        <com.itheima.loopviewpager.LoopViewPager
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:id="@+id/viewpager_banner"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ry_homepage_entry"
+            android:layout_below="@+id/viewpager_banner"/>
+
+
+</RelativeLayout>

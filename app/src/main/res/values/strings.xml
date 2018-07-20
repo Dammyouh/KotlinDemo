@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">KotlinDemo</string>
+    <string name="home_page">首页</string>
+    
+    <!--首页-->
+    <string name="school">校园</string>
+    <string name="course">课程</string>
+    <string name="question_bank">题库</string>
+    <string name="classmate">同学</string>
+    <string name="lecture">讲座</string>
+    <string name="question_answer">问答</string>
+</resources>
