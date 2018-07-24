@@ -53,6 +53,7 @@ public class RxHelper {
                             @Override
                             public boolean test(ActivityLifeCycleEvent activityLifeCycleEvent) {
                                 return activityLifeCycleEvent.equals(event);
+
                             }
                         });
                 return (ObservableSource<T>) observable.takeUntil(compareLifecycleObservable)
