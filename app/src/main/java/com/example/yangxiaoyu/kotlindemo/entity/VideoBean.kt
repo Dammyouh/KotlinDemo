@@ -1,48 +1,27 @@
 package com.example.yangxiaoyu.kotlindemo.entity
 
+import com.example.yangxiaoyu.kotlindemo.base.PoKo
 import com.google.gson.annotations.SerializedName
 
-
-
 /**
- * Created by yangxy on 2018/7/20.
+ * Created by yangxy on 2018/7/23.
  */
-class VideoBean {
+
+@PoKo
+data class VideoBean(var i : Int = 0) {
     @SerializedName("code")
-    private var code: Int = 0
+    var code : Int = 0
+
     @SerializedName("message")
-    private var message: String? = null
+    var message : String? = null
+
     @SerializedName("data")
-    private var data: List<Video>? = null
+    var data : List<Video>? = null
 
 
-    fun getCode(): Int {
-        return code
+    class Video{
+        var title : String ? = null
+        var cover : String ? = null
     }
 
-    fun setCode(code: Int) {
-        this.code = code
-    }
-
-    fun getMessage(): String? {
-        return message
-    }
-
-    fun setMessage(message: String) {
-        this.message = message
-    }
-
-    fun getData(): List<Video>? {
-        return data
-    }
-
-    fun setData(data: List<Video>) {
-        this.data = data
-    }
-
-    internal inner class Video {
-
-        var title: String? = null
-        var cover: String? = null
-    }
 }

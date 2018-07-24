@@ -8,17 +8,30 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
+import com.example.yangxiaoyu.kotlindemo.net.HttpUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
+import io.reactivex.subjects.PublishSubject
+import com.example.yangxiaoyu.kotlindemo.net.ActivityLifeCycleEvent
+
+
 
 class HomeActivity : AppCompatActivity(),BottomNavigationBar.OnTabSelectedListener, ViewPager.OnPageChangeListener{
 
     private var fragmentList : List<Fragment> ? = null
+    val lifecycleSubject = PublishSubject.create<ActivityLifeCycleEvent>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+        getData()
     }
+
+    private fun getData() {
+        lifecycleSubject.onNext(ActivityLifeCycleEvent.CREATE)
+        HttpUtil.getInstance().doGet(lifecycleSubject,this)
+    }
+
 
     private fun initView() {
         with(bottom_toolbar){

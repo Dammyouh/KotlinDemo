@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-allopen"
+apply plugin: "kotlin-noarg"
 
 
 android {
@@ -25,6 +27,15 @@ android {
     }
 
 }
+
+noArg {
+    annotation("com.example.yangxiaoyu.kotlindemo.base.PoKo")
+}
+
+allOpen {
+    annotation("com.example.yangxiaoyu.kotlindemo.base.PoKo")
+}
+
 
 
 dependencies {
